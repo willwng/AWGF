@@ -1,3 +1,7 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+
 def pretty(ax):
     # remove x and y ticks
     ax.set_xticks([])

@@ -1,6 +1,6 @@
 """
-Experiment 1: Combination of quadratic linear term and entropy
-    Normal Gradient Descent
+Experiment 2: Combination of quadratic linear term and entropy
+    Momentum Gradient Descent
 """
 import csv
 
@@ -11,7 +11,7 @@ from helper.distribution_helper import sample_distribution
 from helper.plot_tools import *
 
 
-def run_experiment1(
+def run_experiment2(
         out_dir: str,
         max_iter: int
 ):
@@ -28,14 +28,17 @@ def run_experiment1(
 
     # Optimize the system
     energies = []
-    eta = 0.5
     progress_bar = tqdm(range(max_iter))
+    velocity = np.zeros_like(particles)
+    gamma = 0.5
+    eta = 0.5
     for i in progress_bar:
         if i % 25 == 0:
             draw_particles(particles, time=float(i) / max_iter)
             plt.savefig(f"{out_dir}/iteration_{format_iteration(i)}.png", dpi=300)
         energy_total, grad_total = total_energy_gradient(particles)
-        particles -= eta * grad_total
+        velocity -= eta * (gamma * velocity + grad_total)
+        particles += eta * velocity
         energies.append(energy_total)
         progress_bar.set_description(f"Energy: {energy_total:.4f}")
 
