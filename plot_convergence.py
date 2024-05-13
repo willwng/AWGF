@@ -26,15 +26,15 @@ def main():
     expt3_data = collect_data("out/expt3/energies.csv")
     final_energy = expt3_data[-1][1]
     # subtract
-    expt1_data = [[x[0], x[1] - final_energy] for x in expt1_data]
-    expt2_data = [[x[0], x[1] - final_energy] for x in expt2_data]
-    expt3_data = [[x[0], x[1] - final_energy] for x in expt3_data]
+    # expt1_data = [[x[0], x[1] - final_energy] for x in expt1_data]
+    # expt2_data = [[x[0], x[1] - final_energy] for x in expt2_data]
+    # expt3_data = [[x[0], x[1] - final_energy] for x in expt3_data]
     plot_data(expt1_data, ax, label="GD")
     plot_data(expt2_data, ax, label="Accelerated")
     plot_data(expt3_data, ax, label="Accelerated w/ Steering")
 
     ax.set_xlabel("Iteration", fontsize=20)
-    ax.set_ylabel(r"Energy Residual", fontsize=20)
+    ax.set_ylabel(r"Energy", fontsize=20)
     ax.tick_params(axis='both', which='major', labelsize=16)
     ax.legend(fontsize=16)
     ax.set_xscale("log")
@@ -42,7 +42,7 @@ def main():
     ax.set_xlim(1, 5e3)
     ax.set_ylim(3e-4, 1e2)
     plt.tight_layout()
-    plt.savefig("out/convergence-log.pdf")
+    plt.savefig("out/convergence.pdf")
     plt.show()
     return
 

@@ -1,12 +1,12 @@
 """
-Experiment 1: Combination of quadratic linear term and entropy
-    Normal Gradient Descent
+Experiment 1: Normal Gradient Descent
+    Update the energy accordingly
 """
 import csv
 
 from tqdm import tqdm
 
-from energies.energy_combiner import total_energy_gradient
+from energies.energy_combiner import total_energy_gradient_quad, get_cornell_kl
 from helper.distribution_helper import sample_distribution
 from helper.plot_tools import *
 
@@ -34,7 +34,8 @@ def run_experiment1(
         if i % 25 == 0:
             draw_particles(particles, time=float(i) / max_iter)
             plt.savefig(f"{out_dir}/iteration_{format_iteration(i)}.png", dpi=300)
-        energy_total, grad_total = total_energy_gradient(particles)
+            plt.close()
+        energy_total, grad_total = get_cornell_kl(particles)
         particles -= eta * grad_total
         energies.append(energy_total)
         progress_bar.set_description(f"Energy: {energy_total:.4f}")
