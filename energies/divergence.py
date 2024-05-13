@@ -1,9 +1,9 @@
 import numpy as np
 import scipy
 
-# Initialize the cornell points and the KDTree
-cornell_points = np.load("experiments/cornell_points.npy")
-cornell_tree = scipy.spatial.cKDTree(cornell_points)
+# Initialize the image points and the KDTree
+image_points = np.load("experiments/heart_points.npy")
+image_tree = scipy.spatial.cKDTree(image_points)
 
 
 def kl_divergence(particles: np.ndarray, q_tree, m: int) -> float:
@@ -41,9 +41,9 @@ def nabla_kl_divergence(particles: np.ndarray, q_tree, m: int) -> np.ndarray:
     return grad
 
 
-def kl_divergence_cornell(p: np.ndarray) -> float:
-    return kl_divergence(particles=p, q_tree=cornell_tree, m=cornell_points.shape[0])
+def kl_divergence_image(p: np.ndarray) -> float:
+    return kl_divergence(particles=p, q_tree=image_tree, m=image_points.shape[0])
 
 
-def nabla_kl_divergence_cornell(p: np.ndarray) -> np.ndarray:
-    return nabla_kl_divergence(particles=p, q_tree=cornell_tree, m=cornell_points.shape[0])
+def nabla_kl_divergence_image(p: np.ndarray) -> np.ndarray:
+    return nabla_kl_divergence(particles=p, q_tree=image_tree, m=image_points.shape[0])

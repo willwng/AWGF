@@ -6,7 +6,7 @@ import csv
 
 from tqdm import tqdm
 
-from energies.energy_combiner import total_energy_gradient_quad, get_cornell_kl
+from energies.energy_combiner import total_energy_gradient_quad, get_image_kl
 from helper.distribution_helper import sample_distribution
 from helper.plot_tools import *
 
@@ -36,7 +36,7 @@ def run_experiment3(
         if i % 25 == 0:
             draw_particles(particles, time=float(i) / max_iter)
             plt.savefig(f"{out_dir}/iteration_{format_iteration(i)}.png", dpi=300)
-        energy_total, grad_total = get_cornell_kl(particles)
+        energy_total, grad_total = get_image_kl(particles)
         expected_vsq = np.sum(velocity ** 2) / n_particles
         expected_gsq = np.sum(grad_total ** 2) / n_particles
         tau_factor = 1 + (gamma * np.sqrt(expected_vsq / expected_gsq))

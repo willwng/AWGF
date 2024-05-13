@@ -4,7 +4,7 @@ import numpy as np
 import scipy
 
 from energies.entropy import nabla_entropy_particles, entropy_particles
-from energies.divergence import kl_divergence_cornell, nabla_kl_divergence_cornell
+from energies.divergence import kl_divergence_image, nabla_kl_divergence_image
 from energies.quadratic import nabla_quad_potential_particles, quad_potential_particles
 
 
@@ -24,7 +24,7 @@ def total_energy_gradient_quad(particles: np.ndarray) -> Tuple[float, np.ndarray
     return energy_total, grad_total
 
 
-def get_cornell_kl(particles: np.ndarray) -> Tuple[float, np.ndarray]:
-    energy_total = kl_divergence_cornell(particles)
-    grad_total = nabla_kl_divergence_cornell(particles)
+def get_image_kl(particles: np.ndarray) -> Tuple[float, np.ndarray]:
+    energy_total = kl_divergence_image(particles)
+    grad_total = nabla_kl_divergence_image(particles)
     return energy_total, grad_total
