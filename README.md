@@ -2,13 +2,14 @@
 
 Left to right: standard gradient descent, accelerated descent, accelerated descent with steering. Energy functional contains a quadratic term and entropy.
 <p float="center">
-  <img src="https://github.com/willwng/AWGF/blob/main/movies/movie_gd.gif" width="250" />
-  <img src="https://github.com/willwng/AWGF/blob/main/movies/movie_acc.gif" width="250" />
-  <img src="https://github.com/willwng/AWGF/blob/main/movies/movie_steer.gif" width="250" />
+  <img src="https://github.com/willwng/AWGF/blob/main/movies/movie_gd-compressed.gif" width="250" />
+  <img src="https://github.com/willwng/AWGF/blob/main/movies/movie_acc-compressed.gif" width="250" />
+  <img src="https://github.com/willwng/AWGF/blob/main/movies/movie_steer-compressed.gif" width="250" />
 </p>
 
 
-Here's our implementation on KL divergence (with Cornell logo)
+Here's our implementation on KL divergence (with Cornell logo) and heart - note that this algorithm can easily be extended to 3D graphics
 <p float="center">
-  <img src="https://github.com/willwng/AWGF/blob/main/movies/cornell.gif" width="500" />
+  <img src="https://github.com/willwng/AWGF/blob/main/movies/cornell-compressed.gif" width="300" />
+  <img src="https://github.com/willwng/AWGF/blob/main/movies/heart.gif" width="300" />
 </p>
