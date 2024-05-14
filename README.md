@@ -8,8 +8,14 @@ Left to right: standard gradient descent, accelerated descent, accelerated desce
 </p>
 
 
-Here's our implementation on KL divergence (with Cornell logo) and heart - note that this algorithm can easily be extended to 3D graphics
+Here's our implementation on KL divergence (with Cornell logo) and heart
 <p float="center">
   <img src="https://github.com/willwng/AWGF/blob/main/movies/cornell-compressed.gif" width="300" />
   <img src="https://github.com/willwng/AWGF/blob/main/movies/heart.gif" width="300" />
+</p>
+
+This algorithm can also easily be extended to 3D graphics
+<p float="center">
+  <img src="https://github.com/willwng/AWGF/blob/main/movies/cube.gif" width="300" />
+  <img src="https://github.com/willwng/AWGF/blob/main/movies/corgi.gif" width="300" />
 </p>
